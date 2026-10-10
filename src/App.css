@@ -1,0 +1,329 @@
+.page-shell {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  min-height: calc(100svh - 4.5rem);
+  isolation: isolate;
+  background: #33242b;
+}
+
+.hero-image-overlay {
+  background:
+    linear-gradient(90deg, rgba(35, 24, 30, 0.82) 0%, rgba(35, 24, 30, 0.56) 44%, rgba(35, 24, 30, 0.08) 100%),
+    linear-gradient(0deg, rgba(35, 24, 30, 0.24), transparent 55%);
+}
+
+.portrait-shell {
+  position: relative;
+}
+
+.floating-window {
+  border-radius: 1.4rem;
+}
+
+.floating-heart {
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: rgba(197, 115, 127, 0.7);
+  filter: drop-shadow(0 8px 16px rgba(155, 105, 119, 0.12));
+  animation: floatHeart 8s ease-in-out infinite;
+}
+
+.floating-heart--1 {
+  left: 8%;
+  top: 20%;
+}
+
+.floating-heart--2 {
+  right: 12%;
+  top: 14%;
+  animation-delay: 1s;
+}
+
+.floating-heart--3 {
+  left: 18%;
+  bottom: 18%;
+  animation-delay: 2s;
+}
+
+.floating-heart--4 {
+  right: 18%;
+  bottom: 22%;
+  animation-delay: 3s;
+}
+
+.section-shell {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.memory-grid {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 3rem;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.memory-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(230, 205, 199, 0.9);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 40px rgba(111, 85, 84, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.memory-card-image {
+  aspect-ratio: 4 / 3;
+  flex: none;
+}
+
+.memory-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memory-card-content {
+  flex: 1;
+}
+
+.memory-card h3,
+.memory-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.memory-card h3 {
+  -webkit-line-clamp: 2;
+}
+
+.memory-card p {
+  -webkit-line-clamp: 3;
+}
+
+.memory-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 52px rgba(111, 85, 84, 0.12);
+}
+
+@media (max-width: 900px) {
+  .memory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .memory-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.creator-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.letter-paper {
+  background-image: linear-gradient(rgba(125, 94, 98, 0.04) 1px, transparent 1px);
+  background-size: 100% 1.7rem;
+}
+
+.letter-divider {
+  display: flex;
+  justify-content: center;
+  padding: 0.35rem 0 0.1rem;
+  color: #ad7881;
+  font-size: 0.95rem;
+  letter-spacing: 0.24em;
+}
+
+.birthday-letter-shell {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 14% 18%, rgba(245, 210, 216, 0.52), transparent 35%),
+    radial-gradient(ellipse at 88% 75%, rgba(222, 216, 245, 0.55), transparent 36%),
+    #f7efe8;
+}
+
+.letter-sky {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sky-balloon {
+  position: absolute;
+  bottom: -2rem;
+  width: 1.5rem;
+  height: 1.9rem;
+  border-radius: 50% 50% 46% 46%;
+  opacity: 0;
+  box-shadow: inset -5px -5px 9px rgba(105, 68, 80, 0.12), inset 4px 4px 8px rgba(255, 255, 255, 0.6);
+}
+
+.sky-balloon::before {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  height: 2.5rem;
+  border-left: 1px solid rgba(142, 108, 117, 0.32);
+  content: '';
+}
+
+.sky-balloon::after {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: calc(50% - 3px);
+  border-top: 5px solid currentColor;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
+  content: '';
+}
+
+.sky-balloon:nth-child(1) { left: 9%; }
+.sky-balloon:nth-child(2) { left: 29%; }
+.sky-balloon:nth-child(3) { left: 57%; }
+.sky-balloon:nth-child(4) { left: 76%; }
+.sky-balloon:nth-child(5) { left: 91%; }
+
+.sky-balloon--rose {
+  color: #bb7587;
+  background: linear-gradient(145deg, #f3c7d0, #d8899e);
+}
+
+.sky-balloon--lilac {
+  color: #8977b6;
+  background: linear-gradient(145deg, #e1d7f6, #b8a6dd);
+}
+
+.sky-balloon--gold {
+  color: #a98652;
+  background: linear-gradient(145deg, #f5dfb5, #d8b779);
+}
+
+.sky-balloon--peach {
+  color: #b57d70;
+  background: linear-gradient(145deg, #f4d0c2, #d99c8c);
+}
+
+.letter-stamp:nth-of-type(1) {
+  color: #bb7587;
+  background: linear-gradient(145deg, #f3c7d0, #d8899e);
+}
+
+.letter-stamp:nth-of-type(2) {
+  color: #8977b6;
+  background: linear-gradient(145deg, #e1d7f6, #b8a6dd);
+}
+
+.letter-stamp:nth-of-type(3) {
+  color: #a98652;
+  background: linear-gradient(145deg, #f5dfb5, #d8b779);
+}
+
+.letter-stamp:nth-of-type(4) {
+  color: #b57d70;
+  background: linear-gradient(145deg, #f4d0c2, #d99c8c);
+}
+
+.letter-stamp {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 9999px;
+  box-shadow: 0 3px 10px rgba(105, 76, 81, 0.12);
+  font-size: 1.05rem;
+}
+
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -12%;
+  width: 12px;
+  height: 18px;
+  border-radius: 9999px;
+  opacity: 0.85;
+  animation: confettiFall 2.6s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(260deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: calc(100svh - 4rem);
+  }
+
+  .hero-image-overlay {
+    background:
+      linear-gradient(0deg, rgba(35, 24, 30, 0.82) 0%, rgba(35, 24, 30, 0.5) 48%, rgba(35, 24, 30, 0.08) 100%),
+      linear-gradient(90deg, rgba(35, 24, 30, 0.18), transparent);
+  }
+
+  .section-shell {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
